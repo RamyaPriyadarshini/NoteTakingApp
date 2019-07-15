@@ -14,7 +14,7 @@ class NotebookList extends Component{
   render(){
     const notebooks = this.state.notebooks.map((x)=>{
       return (
-        <Notebook title={x.title} lastEdited={x.lastEdited} key={x.id}/>
+        <Notebook title={x.title} lastEdited={x.lastEdited} key={x.id} selectNotebook={this.props.selectNotebook} id={x.id}/>
       )
     });
     return(

@@ -4,11 +4,12 @@ import CreateNoteToggle from './CreateNoteToggle';
 import SearchComponent from './SearchComponent';
 
 class NoteNav extends Component{
+
   render(){
     return(
       <div>
         <SearchComponent/>
-        <NoteList selected="2"/>
+        <NoteList selected={this.props.selected}/>
         <CreateNoteToggle/>
       </div>
     )

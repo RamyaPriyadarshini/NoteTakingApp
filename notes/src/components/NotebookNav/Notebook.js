@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
 class Notebook extends Component{
+
+  selectNotebook = ()=>{
+    this.props.selectNotebook(this.props.id);
+  }
   render(){
     return(
       <div className="Notebook">
@@ -9,6 +13,7 @@ class Notebook extends Component{
         <hr/>
         <a href="#">Delete</a>
         <a href="#">Edit</a>
+        <a onClick={this.selectNotebook}>Select</a>
       </div>
     )
   }

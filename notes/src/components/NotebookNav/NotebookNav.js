@@ -4,11 +4,12 @@ import CreateNotebookToggle from './CreateNotebookToggle';
 import SearchComponent from './SearchComponent';
 
 class NotebookNav extends Component{
+
   render(){
     return(
       <div>
         <SearchComponent/>
-        <NotebookList/>
+        <NotebookList selectNotebook={this.props.selectNotebook}/>
         <CreateNotebookToggle/>
       </div>
     )
