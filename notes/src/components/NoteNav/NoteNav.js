@@ -8,7 +8,7 @@ class NoteNav extends Component{
     return(
       <div>
         <SearchComponent/>
-        <NoteList/>
+        <NoteList selected="2"/>
         <CreateNoteToggle/>
       </div>
     )

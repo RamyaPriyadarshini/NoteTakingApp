@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import Note from './Note'
-import sample from '../sample.json'
+import noteData from '../Notes.json'
 
 class NoteList extends Component{
-    state = {
-        current_notebook:"OpenCV"
+  constructor(props){
+    super(props);
+    this.state = {
+      notes:noteData.notes
     }
+  }
   render(){
     const styles =
     {
@@ -14,10 +17,12 @@ class NoteList extends Component{
       maxWidth: "100%",
       overflowX: "hidden"
     };
-    const notes = sample.notes[this.state.current_notebook].map(x => {
-    return (
-        <Note title={x.title} content={x.note} key={x.key}/>
-    )
+    const notes = this.state.notes.map((x) => {
+      if(x.notebookId == this.props.selected){
+        return (
+          <Note title={x.title} content={x.content} key={x.id}/>
+        )
+      }
     })
     return(
       <div style={styles}>
