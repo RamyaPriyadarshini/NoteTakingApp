@@ -18,7 +18,7 @@ class NoteList extends Component{
       overflowX: "hidden"
     };
     const notes = this.state.notes.map((x) => {
-      if(x.notebookId == this.props.selected){
+      if(x.notebookId === this.props.selected){
         return (
           <Note title={x.title} content={x.content} key={x.id}/>
         )
