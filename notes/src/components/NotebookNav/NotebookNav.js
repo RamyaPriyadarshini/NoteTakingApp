@@ -1,3 +1,6 @@
+var dateFormat = require('dateformat');
+var uuid = require('uuid');
+
 import React,{ Component } from 'react';
 import NotebookList from './NotebookList';
 import CreateNotebookToggle from './CreateNotebookToggle';
@@ -13,10 +16,12 @@ class NotebookNav extends Component{
   }
 
   addNotebook = (Title)=>{
+    var date = new Date();
+    date = dateFormat(date, "d mmmm, yyyy");
     var notebook = {
-      id:3,
+      id:uuid.v4(),
       title:Title,
-      lastEdited:"12 June, 2019",
+      lastEdited:date,
       noteList:[]
     }
     var notebookList = this.state.notebooks;
